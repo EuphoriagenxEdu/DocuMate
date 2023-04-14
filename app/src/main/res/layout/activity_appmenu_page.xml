@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wave"
+    android:backgroundTintMode="multiply"
+    android:backgroundTint="@color/white"
+    >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_vi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/select_menu"
+            android:textColor="#9E9E9E"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/text_vi"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="25dp"
+            android:columnCount="2"
+            android:rowCount="4">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/white"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="140dp"
+                        android:layout_height="100dp"
+                        android:layout_marginBottom="10dp"
+                        android:src="@drawable/txt_to_pdf"
+                        android:contentDescription="@string/img1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_to_pdf"
+                        android:textColor="@color/black"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:id="@+id/txtToPdf"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/round_corner"
+                        android:pointerIcon="hand"
+                        android:src="@drawable/select_btn"
+                        tools:ignore="ContentDescription,DuplicateIds,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/white"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="130dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/doc_scanner"
+
+                        android:contentDescription="@string/img2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/document_scanner"
+                        android:textColor="@color/black"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:id="@+id/docScanBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/round_corner"
+                        android:pointerIcon="hand"
+                        android:src="@drawable/select_btn"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+                        android:contentDescription="TODO" />
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="130dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/folder"
+                        android:contentDescription="@string/img3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/folder_open"
+                        android:textColor="@color/black"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:id="@+id/folderBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/round_corner"
+                        android:pointerIcon="hand"
+                        android:src="@drawable/select_btn"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="130dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/camera"
+                        android:contentDescription="@string/img4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/take_pics"
+                        android:textColor="@color/black"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:id="@+id/picTakeBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/round_corner"
+                        android:pointerIcon="hand"
+                        android:src="@drawable/select_btn"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="2"
+                android:layout_rowWeight="1"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="130dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/img_editor"
+                        android:contentDescription="@string/img5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/image_editor"
+                        android:textColor="@color/black"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:id="@+id/imgEdtBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/round_corner"
+                        android:pointerIcon="hand"
+                        android:src="@drawable/select_btn"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="2"
+                android:layout_rowWeight="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/white"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="140dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/quick_notes"
+                        android:textColor="@color/black"
+                        android:contentDescription="@string/img6" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/quick_note"
+                        android:textColor="@color/black"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:id="@+id/quiNoteBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/round_corner"
+                        android:pointerIcon="hand"
+                        android:src="@drawable/select_btn"
+                        tools:ignore="DuplicateIds,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </GridLayout>
+    </RelativeLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navbarmain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/black"
+            app:itemTextColor="@color/white"
+            app:itemIconTint="@drawable/selector"
+            app:menu="@menu/main_menu"
+
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

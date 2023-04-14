@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/login_back_ground"
+    tools:context=".MainActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="30dp"
+        android:elevation="20dp"
+        android:background="@drawable/custom_edittext">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:padding="24dp">
+
+
+            <TextView
+                android:id="@+id/LginText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/signupTxt"
+                android:textAlignment="center"
+                android:textColor="#448AFF"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/mail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/custom_edittext"
+                android:drawableStart="@drawable/email"
+                android:drawablePadding="8dp"
+                android:hint="@string/e_mail"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:textColorHint="#5C6BC0"
+                tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+
+            <EditText
+                android:id="@+id/phonenumber"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/custom_edittext"
+                android:drawableStart="@drawable/phone"
+                android:drawablePadding="8dp"
+                android:hint="@string/phone_number"
+                android:importantForAutofill="no"
+                android:inputType="phone"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:textColorHint="#5C6BC0"
+                tools:ignore="TextContrastCheck,TextFields,VisualLintTextFieldSize" />
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/custom_edittext"
+                android:drawableStart="@drawable/user"
+                android:drawablePadding="8dp"
+                android:hint="@string/usernameTxt"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:textColorHint="#5C6BC0"
+                tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
+                android:autofillHints=""
+                android:background="@drawable/custom_edittext"
+                android:drawableStart="@drawable/password"
+                android:drawablePadding="8dp"
+                android:hint="@string/passwordTxt"
+                android:inputType="textPassword"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:textColorHint="#5C6BC0"
+                tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+
+            <EditText
+                android:id="@+id/cPassword"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
+                android:autofillHints=""
+                android:background="@drawable/custom_edittext"
+                android:drawableStart="@drawable/confirm_password"
+                android:drawablePadding="8dp"
+                android:hint="@string/confirm_password"
+                android:inputType="textPassword"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:textColorHint="#5C6BC0"
+                tools:ignore="DuplicateIds,TextContrastCheck,VisualLintTextFieldSize" />
+
+            <Button
+                android:id="@+id/signUpBtn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/purple"
+                android:text="@string/signupTxt"
+                android:textColor="#263238"
+                android:textSize="18sp"
+                app:cornerRadius="20dp"
+                tools:ignore="VisualLintButtonSize,DuplicateSpeakableTextCheck" />
+
+
+        </LinearLayout>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
