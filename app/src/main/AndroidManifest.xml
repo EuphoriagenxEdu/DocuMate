@@ -12,25 +12,31 @@
         android:theme="@style/Theme.DroidTools"
         tools:targetApi="31">
         <activity
-            android:name=".Quick_Note_Output_Page"
+            android:name=".notepad.Notepad_Start_Interface"
             android:exported="false" />
         <activity
-            android:name=".Quick_Note_Input_Page"
+            android:name=".user_dashbord.User_Details_Show"
             android:exported="false" />
         <activity
-            android:name=".Appmenu_Page"
+            android:name=".notepad.Quick_Note_Output_Page"
             android:exported="false" />
         <activity
-            android:name=".Login_Page"
+            android:name=".notepad.Quick_Note_Input_Page"
             android:exported="false" />
         <activity
-            android:name=".Signup_Page"
+            android:name=".Menus.Appmenu_Page"
             android:exported="false" />
         <activity
-            android:name=".Login_Or_Signup_Page"
+            android:name=".login_signups.Login_Page"
             android:exported="false" />
         <activity
-            android:name=".Launcher_Activity"
+            android:name=".login_signups.Signup_Page"
+            android:exported="false" />
+        <activity
+            android:name=".login_signups.Login_Or_Signup_Page"
+            android:exported="false" />
+        <activity
+            android:name=".StartActivity.Launcher_Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,7 +45,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".Menus.MainActivity"
             android:exported="true" />
     </application>
 

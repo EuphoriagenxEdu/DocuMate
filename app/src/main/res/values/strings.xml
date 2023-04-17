@@ -42,4 +42,6 @@
     <string name="profile">Profile</string>
     <string name="home">Home</string>
     <string name="menu">Menu</string>
+    <string name="todo">TODO</string>
+    <string name="note_add">TODO</string>
 </resources>

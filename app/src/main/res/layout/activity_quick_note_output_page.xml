@@ -14,6 +14,8 @@
         android:text="Title"
         android:textColor="@color/splashBG"
         android:textSize="35sp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:textStyle="bold"
         android:layout_gravity="center"
         android:gravity="center_horizontal"
@@ -23,35 +25,16 @@
     <TextView
         android:id="@+id/descView"
         android:layout_width="match_parent"
-        android:layout_height="618dp"
+        android:layout_height="674dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:text="Description"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="73dp"
         tools:layout_editor_absoluteY="43dp" />
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity">
 
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/navbarmain"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:background="@color/black"
-            app:itemTextColor="@color/white"
-            app:itemIconTint="@drawable/selector"
-            app:menu="@menu/main_menu"
-
-            />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

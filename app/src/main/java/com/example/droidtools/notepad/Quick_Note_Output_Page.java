@@ -1,9 +1,11 @@
-package com.example.droidtools;
+package com.example.droidtools.notepad;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.droidtools.R;
 
 import java.util.Objects;
 

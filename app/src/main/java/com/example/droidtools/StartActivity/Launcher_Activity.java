@@ -1,9 +1,12 @@
-package com.example.droidtools;
+package com.example.droidtools.StartActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.example.droidtools.R;
+import com.example.droidtools.login_signups.Login_Or_Signup_Page;
 
 import java.util.Objects;
 
@@ -23,7 +26,7 @@ public class Launcher_Activity extends AppCompatActivity {
                 e.printStackTrace();
             }
             finally {
-                Intent intent = new Intent(Launcher_Activity.this,Login_Or_Signup_Page.class);
+                Intent intent = new Intent(Launcher_Activity.this, Login_Or_Signup_Page.class);
                 startActivity(intent);
             }
         });

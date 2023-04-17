@@ -1,4 +1,4 @@
-package com.example.droidtools;
+package com.example.droidtools.login_signups;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.droidtools.R;
 
 import java.util.Objects;
 

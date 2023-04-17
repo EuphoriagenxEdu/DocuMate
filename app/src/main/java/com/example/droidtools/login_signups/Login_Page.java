@@ -1,4 +1,4 @@
-package com.example.droidtools;
+package com.example.droidtools.login_signups;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.droidtools.Menus.Appmenu_Page;
+import com.example.droidtools.R;
 
 import java.util.Objects;
 
@@ -32,7 +35,7 @@ public class Login_Page extends AppCompatActivity {
 
             if (username.getText().toString().equals("user") && password.getText().toString().equals("1234")) {
 
-                Intent intent = new Intent(Login_Page.this,Appmenu_Page.class);
+                Intent intent = new Intent(Login_Page.this, Appmenu_Page.class);
                 startActivity(intent);
             } else {
                 Toast.makeText(Login_Page.this, "Login Failed!", Toast.LENGTH_SHORT).show();

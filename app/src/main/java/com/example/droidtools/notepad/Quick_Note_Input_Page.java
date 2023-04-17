@@ -1,4 +1,4 @@
-package com.example.droidtools;
+package com.example.droidtools.notepad;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+
+import com.example.droidtools.R;
 
 public class Quick_Note_Input_Page extends AppCompatActivity {
     private EditText noteTitle,noteDesc;
@@ -32,7 +34,7 @@ public class Quick_Note_Input_Page extends AppCompatActivity {
 
             String title = noteTitle.getText().toString();
             String desc = noteDesc.getText().toString();
-            Intent intent = new Intent(Quick_Note_Input_Page.this,Quick_Note_Output_Page.class);
+            Intent intent = new Intent(Quick_Note_Input_Page.this, Quick_Note_Output_Page.class);
             intent.putExtra("title",title);
             intent.putExtra("desc",desc);
             startActivity(intent);

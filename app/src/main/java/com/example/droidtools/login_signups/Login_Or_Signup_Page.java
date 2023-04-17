@@ -1,10 +1,12 @@
-package com.example.droidtools;
+package com.example.droidtools.login_signups;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+
+import com.example.droidtools.R;
 
 import java.util.Objects;
 
@@ -23,11 +25,11 @@ public class Login_Or_Signup_Page extends AppCompatActivity {
         signup = findViewById(R.id.signup);
 
         login.setOnClickListener(view -> {
-            Intent intent = new Intent(Login_Or_Signup_Page.this,Login_Page.class);
+            Intent intent = new Intent(Login_Or_Signup_Page.this, Login_Page.class);
             startActivity(intent);
         });
         signup.setOnClickListener(view -> {
-            Intent intent = new Intent(Login_Or_Signup_Page.this,Signup_Page.class);
+            Intent intent = new Intent(Login_Or_Signup_Page.this, Signup_Page.class);
             startActivity(intent);
         });
     }

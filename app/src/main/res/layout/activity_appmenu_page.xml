@@ -12,7 +12,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="35dp"
+        >
 
         <TextView
             android:id="@+id/text_vi"
@@ -21,7 +23,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:text="@string/select_menu"
-            android:textColor="#9E9E9E"
+            android:textColor="@color/white"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -143,7 +145,7 @@
                         android:pointerIcon="hand"
                         android:src="@drawable/select_btn"
                         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
-                        android:contentDescription="TODO" />
+                        android:contentDescription="@string/todo" />
                 </LinearLayout>
 
 
@@ -371,7 +373,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".Menus.MainActivity">
 
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
