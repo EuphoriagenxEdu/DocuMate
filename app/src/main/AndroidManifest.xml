@@ -12,6 +12,9 @@
         android:theme="@style/Theme.DroidTools"
         tools:targetApi="31">
         <activity
+            android:name=".notepad.Notepad_Start_Interface_Demo"
+            android:exported="false" />
+        <activity
             android:name=".notepad.Notepad_Start_Interface"
             android:exported="false" />
         <activity

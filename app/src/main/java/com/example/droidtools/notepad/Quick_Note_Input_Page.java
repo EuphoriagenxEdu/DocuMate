@@ -2,14 +2,18 @@ package com.example.droidtools.notepad;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.droidtools.R;
+import com.example.droidtools.RoomDatabasePackage.MyDatabase;
+import com.example.droidtools.RoomDatabasePackage.Notes_Database;
 
 public class Quick_Note_Input_Page extends AppCompatActivity {
     private EditText noteTitle,noteDesc;
@@ -34,10 +38,25 @@ public class Quick_Note_Input_Page extends AppCompatActivity {
 
             String title = noteTitle.getText().toString();
             String desc = noteDesc.getText().toString();
-            Intent intent = new Intent(Quick_Note_Input_Page.this, Quick_Note_Output_Page.class);
-            intent.putExtra("title",title);
-            intent.putExtra("desc",desc);
-            startActivity(intent);
+            if (title.isEmpty()){
+                Toast.makeText(this, "Title is empty", Toast.LENGTH_SHORT).show();
+            }
+            else if (desc.isEmpty()) {
+                Toast.makeText(this, "Description is empty", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Notes_Database datas = new Notes_Database(title,desc);
+                MyDatabase myDatabase = Room.databaseBuilder(Quick_Note_Input_Page.this,MyDatabase.class,"NoteDatabase")
+                        .allowMainThreadQueries().build();
+
+                myDatabase.dao().noteInsertion(datas);
+//            Intent intent = new Intent(Quick_Note_Input_Page.this, Quick_Note_Output_Page.class);
+//            intent.putExtra("title",title);
+//            intent.putExtra("desc",desc);
+//            startActivity(intent);
+            }
+
+
         }
 
 

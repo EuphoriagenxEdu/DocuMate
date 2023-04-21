@@ -33,7 +33,7 @@ public class Login_Page extends AppCompatActivity {
 
         loginButton.setOnClickListener(view -> {
 
-            if (username.getText().toString().equals("user") && password.getText().toString().equals("1234")) {
+            if (username.getText().toString().equals("1234") && password.getText().toString().equals("1234")) {
 
                 Intent intent = new Intent(Login_Page.this, Appmenu_Page.class);
                 startActivity(intent);
