@@ -1,4 +1,4 @@
-package com.example.droidtools.Menus;
+package com.example.droidtools;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.droidtools.R;
+import com.example.droidtools.Menus.Appmenu_Page;
 import com.example.droidtools.login_signups.Login_Page;
 import com.example.droidtools.user_dashbord.User_Details_Show;
 import com.google.android.material.bottomnavigation.BottomNavigationView;

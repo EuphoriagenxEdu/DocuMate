@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.droidtools.Menus.Appmenu_Page;
-import com.example.droidtools.Menus.MainActivity;
 import com.example.droidtools.R;
 import com.example.droidtools.login_signups.Login_Page;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
