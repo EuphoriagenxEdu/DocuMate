@@ -11,7 +11,6 @@ import android.widget.ImageButton;
 import com.example.droidtools.notepad.Notepad_Start_Interface;
 import com.example.droidtools.R;
 import com.example.droidtools.login_signups.Login_Page;
-import com.example.droidtools.notepad.Notepad_Start_Interface_Demo;
 import com.example.droidtools.user_dashbord.User_Details_Show;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -27,7 +26,7 @@ public class Appmenu_Page extends AppCompatActivity {
 
         quickNoteBtn = (ImageButton) findViewById(R.id.quiNoteBtn);
         quickNoteBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(Appmenu_Page.this, Notepad_Start_Interface_Demo.class);
+            Intent intent = new Intent(Appmenu_Page.this, Notepad_Start_Interface.class);
             startActivity(intent);
         });
         BottomNavigationView navigationView = (BottomNavigationView) findViewById(R.id.navbarmain);

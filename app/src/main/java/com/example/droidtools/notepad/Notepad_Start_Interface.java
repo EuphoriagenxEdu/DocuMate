@@ -1,118 +1,101 @@
 package com.example.droidtools.notepad;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.transition.AutoTransition;
 import android.transition.TransitionManager;
-import android.util.Log;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.example.droidtools.Adapters.DataLoader;
+import com.example.droidtools.Adapters.notesAdapter;
 import com.example.droidtools.R;
-import com.example.droidtools.RoomDatabasePackage.DAO;
 import com.example.droidtools.RoomDatabasePackage.MyDatabase;
+import com.example.droidtools.RoomDatabasePackage.NotesDao;
 import com.example.droidtools.RoomDatabasePackage.Notes_Database;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class Notepad_Start_Interface extends AppCompatActivity {
-    private FloatingActionButton add_btn;
-    private MyDatabase myDatabase;
-    RecyclerView rv;
-    TextView title;
-    TextView desc;
-    TextView note_time;
-    ScrollView content;
-    CardView card;
 
+    private FloatingActionButton addNotes;
+    private notesAdapter adapter;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.activity_notepad_start_interface);
+        init();
 
-
-        rv = (RecyclerView) findViewById(R.id.recycleviewr);
-        rv.setLayoutManager(new LinearLayoutManager(this));
-
-
-
-        title = (TextView)findViewById(R.id.note_title);
-        desc = (TextView) findViewById(R.id.note_desc);
-        note_time = (TextView) findViewById(R.id.note_time);
-        add_btn = (FloatingActionButton) findViewById(R.id.add_btn);
-        content = (ScrollView) findViewById(R.id.content);
-        card = (CardView) findViewById(R.id.card);
-
-
-//
-//        setDB();
-//        List<Notes_Database> datas = myDatabase.dao().getNotedatabase();
-//
-//
-//        int size_arr = datas.size();
-////        String title_list[] = new String[size_arr];
-////        String desc_list[] = new String[size_arr];
-//
-//        for (int i = 0; i < size_arr; i++) {
-//            String title_list = datas.get(i).getNote_title_name().toString();
-//            String desc_list = datas.get(i).getNote_desc_content().toString();
-////                   String time_list = datas.get(0).getCurrentDateAndTime().toString();
-//
-//            title.setText(title_list);
-//            desc.setText(desc_list);
-////                   note_time.setText(time_list);
-//        }
-//
-////
-        title.setOnClickListener(new View.OnClickListener() {
+        addNotes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int vis = (content.getVisibility() == View.GONE)?View.VISIBLE:View.GONE;
-                TransitionManager.beginDelayedTransition(card,new AutoTransition());
-                content.setVisibility(vis);
+                Intent intent = new Intent(getApplicationContext(), Quick_Note_Input_Page.class);
+                startActivity(intent);
+
             }
         });
 
-
-       add_btn.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               Intent intent = new Intent(Notepad_Start_Interface.this, Quick_Note_Input_Page.class);
-               startActivity(intent);
-
-           }
-       });
     }
 
-
-    public void getRooomData(){
-        myDatabase = Room.databaseBuilder(Notepad_Start_Interface.this,MyDatabase.class,"NoteDatabase")
-                .allowMainThreadQueries().build();
-        DAO dao = myDatabase.dao();
-        List<Notes_Database> datas =  dao.getNotedatabase();
-        MyAdapter adapter = new MyAdapter(datas);
-        rv.setAdapter(adapter);
+    @Override
+    protected void onStart() {
+        super.onStart();
+       loadRecyclerView();
     }
 
-    private void setDB(){
-         myDatabase = Room.databaseBuilder(Notepad_Start_Interface.this,MyDatabase.class,"NoteDatabase")
-                .allowMainThreadQueries().build();
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadRecyclerView();
     }
 
+    private void loadRecyclerView(){
+        LoaderManager.getInstance(this).
+                initLoader(0, null, new LoaderManager.LoaderCallbacks<Cursor>() {
+                    @NonNull
+                    @Override
+                    public Loader<Cursor> onCreateLoader(int id, @Nullable Bundle args) {
+                        return new DataLoader(Notepad_Start_Interface.this);
+                    }
+
+                    @Override
+                    public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor data) {
+                        adapter.swap(data);
+                    }
+
+                    @Override
+                    public void onLoaderReset(@NonNull Loader<Cursor> loader) {
+
+                    }
+                });
+    }
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+    }
+
+    private void init() {
+        addNotes = (FloatingActionButton) findViewById(R.id.add_btn);
+        recyclerView = (RecyclerView) findViewById(R.id.recycleview);
+        adapter=new notesAdapter();
+    }
 
 
 }

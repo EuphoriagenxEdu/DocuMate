@@ -15,6 +15,8 @@ import com.example.droidtools.R;
 import com.example.droidtools.RoomDatabasePackage.MyDatabase;
 import com.example.droidtools.RoomDatabasePackage.Notes_Database;
 
+import java.util.Date;
+
 public class Quick_Note_Input_Page extends AppCompatActivity {
     private EditText noteTitle,noteDesc;
 
@@ -22,7 +24,11 @@ public class Quick_Note_Input_Page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quick_note_input_page);
-
+        init();
+    }
+    private void init(){
+        noteTitle= (EditText) findViewById(R.id.note_title);
+        noteDesc= (EditText) findViewById(R.id.note_desc);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -33,33 +39,16 @@ public class Quick_Note_Input_Page extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int item_id = item.getItemId();
         if (item_id == R.id.save){
-            noteTitle = (EditText) findViewById(R.id.note_title);
-            noteDesc = (EditText) findViewById(R.id.noteDesc);
-
-            String title = noteTitle.getText().toString();
-            String desc = noteDesc.getText().toString();
-            if (title.isEmpty()){
-                Toast.makeText(this, "Title is empty", Toast.LENGTH_SHORT).show();
-            }
-            else if (desc.isEmpty()) {
-                Toast.makeText(this, "Description is empty", Toast.LENGTH_SHORT).show();
-            }
-            else {
-                Notes_Database datas = new Notes_Database(title,desc);
-                MyDatabase myDatabase = Room.databaseBuilder(Quick_Note_Input_Page.this,MyDatabase.class,"NoteDatabase")
-                        .allowMainThreadQueries().build();
-
-                myDatabase.dao().noteInsertion(datas);
-//            Intent intent = new Intent(Quick_Note_Input_Page.this, Quick_Note_Output_Page.class);
-//            intent.putExtra("title",title);
-//            intent.putExtra("desc",desc);
-//            startActivity(intent);
-            }
-
+           String title=noteTitle.getText().toString();
+           String description=noteDesc.getText().toString();
+           if(!title.isEmpty() || description.isEmpty()){
+               Notes_Database database=new Notes_Database(title,description);
+               long id =MyDatabase.getInstance(this).getNotesDao().insert(database);
+               if(id==-1) Toast.makeText(this, "Error occured while inserting", Toast.LENGTH_SHORT).show();
+                else Toast.makeText(this, "Note Inserted", Toast.LENGTH_SHORT).show();
+           }
 
         }
-
-
         return true;
     }
 }
