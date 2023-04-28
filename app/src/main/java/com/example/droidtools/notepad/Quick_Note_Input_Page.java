@@ -42,10 +42,17 @@ public class Quick_Note_Input_Page extends AppCompatActivity {
            String title=noteTitle.getText().toString();
            String description=noteDesc.getText().toString();
            if(!title.isEmpty() || description.isEmpty()){
-               Notes_Database database=new Notes_Database(title,description);
-               long id =MyDatabase.getInstance(this).getNotesDao().insert(database);
+               final long[] flag = new long[1];
+               new Runnable(){
+                   public void run(){
+                       Notes_Database database=new Notes_Database(title,description);
+                       flag[0] =MyDatabase.getInstance(getApplicationContext()).getNotesDao().insert(database);
+                   }
+               };
+               long id=flag[0];
                if(id==-1) Toast.makeText(this, "Error occured while inserting", Toast.LENGTH_SHORT).show();
-                else Toast.makeText(this, "Note Inserted", Toast.LENGTH_SHORT).show();
+               else Toast.makeText(this, "Note Inserted", Toast.LENGTH_SHORT).show();
+
            }
 
         }

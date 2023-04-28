@@ -8,7 +8,7 @@ import androidx.room.Query;
 
 @Dao
 public interface NotesDao {
-    @Query("SELECT *FROM Notes_Database ORDER BY note_id")
+    @Query("SELECT *FROM NOTE_ENTRY ORDER BY note_id")
     Cursor loadAllPages();
     @Insert
     long insert(Notes_Database database);

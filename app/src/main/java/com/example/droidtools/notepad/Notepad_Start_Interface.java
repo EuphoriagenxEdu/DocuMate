@@ -57,7 +57,7 @@ public class Notepad_Start_Interface extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-       loadRecyclerView();
+
     }
 
     @Override
@@ -77,6 +77,7 @@ public class Notepad_Start_Interface extends AppCompatActivity {
 
                     @Override
                     public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor data) {
+                        System.out.println(data.getCount());
                         adapter.swap(data);
                     }
 
@@ -94,7 +95,10 @@ public class Notepad_Start_Interface extends AppCompatActivity {
     private void init() {
         addNotes = (FloatingActionButton) findViewById(R.id.add_btn);
         recyclerView = (RecyclerView) findViewById(R.id.recycleview);
-        adapter=new notesAdapter();
+        adapter=new notesAdapter(getApplicationContext());
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+        loadRecyclerView();
     }
 
 

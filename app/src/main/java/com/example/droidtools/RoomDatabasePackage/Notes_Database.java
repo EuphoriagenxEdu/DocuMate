@@ -3,6 +3,7 @@ package com.example.droidtools.RoomDatabasePackage;
 
 import android.icu.text.SimpleDateFormat;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -10,12 +11,15 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-@Entity
+@Entity(tableName = "NOTE_ENTRY")
 public class Notes_Database {
     @PrimaryKey(autoGenerate = true)
     int note_id;
+    @ColumnInfo(name="TITLE_COL")
     String note_title_name;
+    @ColumnInfo(name="DESCRIPTION_COL")
     String note_desc_content;
+    @ColumnInfo(name="DATE_COL")
     String  currentDateAndTime;
 
     public Notes_Database(String note_title_name, String note_desc_content) {
