@@ -142,10 +142,10 @@
                         android:layout_height="30dp"
                         android:layout_marginTop="3dp"
                         android:background="@drawable/round_corner"
+                        android:contentDescription="@string/todo"
                         android:pointerIcon="hand"
                         android:src="@drawable/select_btn"
-                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
-                        android:contentDescription="@string/todo" />
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
                 </LinearLayout>
 
 
@@ -198,7 +198,8 @@
                         android:background="@drawable/round_corner"
                         android:pointerIcon="hand"
                         android:src="@drawable/select_btn"
-                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+                        android:contentDescription="@string/todo" />
                 </LinearLayout>
 
 
@@ -238,20 +239,21 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/take_pics"
+                        android:text="@string/image_to_pdf"
                         android:textColor="@color/black"
                         android:textAlignment="center"
                         android:textStyle="bold" />
 
                     <ImageButton
-                        android:id="@+id/picTakeBtn"
+                        android:id="@+id/imgToPdfBtn"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
                         android:layout_marginTop="3dp"
                         android:background="@drawable/round_corner"
                         android:pointerIcon="hand"
                         android:src="@drawable/select_btn"
-                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+                        android:contentDescription="@string/todo" />
                 </LinearLayout>
 
 
@@ -304,7 +306,8 @@
                         android:background="@drawable/round_corner"
                         android:pointerIcon="hand"
                         android:src="@drawable/select_btn"
-                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+                        android:contentDescription="@string/todo" />
                 </LinearLayout>
 
 
@@ -359,7 +362,8 @@
                         android:background="@drawable/round_corner"
                         android:pointerIcon="hand"
                         android:src="@drawable/select_btn"
-                        tools:ignore="DuplicateIds,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                        tools:ignore="DuplicateIds,SpeakableTextPresentCheck,TouchTargetSizeCheck"
+                        android:contentDescription="@string/todo" />
                 </LinearLayout>
 
 

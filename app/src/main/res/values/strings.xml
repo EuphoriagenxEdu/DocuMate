@@ -90,4 +90,9 @@
     <string name="floatBtn">Add Note</string>
     <string name="update_txt">update</string>
     <string name="delete_txt">Delete</string>
+    <string name="camera">Camera</string>
+    <string name="upload">Upload</string>
+    <string name="convert">Convert</string>
+    <string name="image_to_pdf">Image To PDF</string>
+    <string name="convert_to_pdf">Convert To Pdf</string>
 </resources>

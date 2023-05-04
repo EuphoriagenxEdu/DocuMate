@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ImageButton;
 
+import com.example.droidtools.ImageToPDF.ImageToPdf;
+import com.example.droidtools.TextToPDFDir.TextToPdf;
 import com.example.droidtools.notepad.Notepad_Start_Interface;
 import com.example.droidtools.R;
 import com.example.droidtools.login_signups.Login_Page;
@@ -17,7 +19,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.Objects;
 
 public class Appmenu_Page extends AppCompatActivity {
-    private ImageButton quickNoteBtn;
+    private ImageButton quickNoteBtn,imgToPdfBtn,txtToPdf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,21 @@ public class Appmenu_Page extends AppCompatActivity {
             Intent intent = new Intent(Appmenu_Page.this, Notepad_Start_Interface.class);
             startActivity(intent);
         });
+
+        imgToPdfBtn = (ImageButton) findViewById(R.id.imgToPdfBtn);
+        imgToPdfBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(Appmenu_Page.this, ImageToPdf.class);
+            startActivity(intent);
+        });
+
+        txtToPdf = (ImageButton) findViewById(R.id.txtToPdf);
+        txtToPdf.setOnClickListener(view -> {
+            Intent intent = new Intent(Appmenu_Page.this, TextToPdf.class);
+            startActivity(intent);
+        });
+
+
+
         BottomNavigationView navigationView = (BottomNavigationView) findViewById(R.id.navbarmain);
         navigationView.setSelectedItemId(R.id.mainmenu);
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
