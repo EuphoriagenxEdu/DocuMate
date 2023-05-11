@@ -1,18 +1,17 @@
 package com.example.droidtools.Menus;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ImageButton;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.droidtools.ImageToPDF.ImageToPdf;
-import com.example.droidtools.TextToPDFDir.TextToPdf;
-import com.example.droidtools.notepad.Notepad_Start_Interface;
 import com.example.droidtools.R;
 import com.example.droidtools.login_signups.Login_Page;
+import com.example.droidtools.notepad.Notepad_Start_Interface;
 import com.example.droidtools.user_dashbord.User_Details_Show;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -38,11 +37,11 @@ public class Appmenu_Page extends AppCompatActivity {
             startActivity(intent);
         });
 
-        txtToPdf = (ImageButton) findViewById(R.id.txtToPdf);
-        txtToPdf.setOnClickListener(view -> {
-            Intent intent = new Intent(Appmenu_Page.this, TextToPdf.class);
-            startActivity(intent);
-        });
+//        txtToPdf = (ImageButton) findViewById(R.id.txtToPdf);
+//        txtToPdf.setOnClickListener(view -> {
+//            Intent intent = new Intent(Appmenu_Page.this, TextToPdf.class);
+//            startActivity(intent);
+//        });
 
 
 

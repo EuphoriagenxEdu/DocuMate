@@ -95,4 +95,6 @@
     <string name="convert">Convert</string>
     <string name="image_to_pdf">Image To PDF</string>
     <string name="convert_to_pdf">Convert To Pdf</string>
+    <string name="extract_text_will_display">Extract text will display</string>
+    <string name="todo2">TODO</string>
 </resources>
